@@ -1,1 +1,79 @@
-%h1 HELLO WORLD.
+%header 
+  %h1 
+    %a{:href => "#"} 
+      %span.white> TEXT
+      %span.green> ACADEMY
+
+  / %nav 
+  /   %ul 
+  /     %a{:href => "#"} 
+  /       %li
+  /         The Problem
+  /     %a{:href => "#"} 
+  /       %li 
+  /         What We're Doing 
+  /     %a{:href => "#"} 
+  /       %li 
+  /         Who We Are
+
+.wrapper
+  .container.first
+    / %aside 
+    
+    %section.description 
+      %p.home 
+        %b.white 
+          TEXT
+          %span.green> ACADEMY
+        is an entirely SMS-based learning platform for students in the developing world.
+
+      %a.info#problem{:href => "#"} 
+        THE PROBLEM
+
+      %p.problem
+        Students in the developing world often don't have access to textbooks, but over 90% of the population owns a mobile phone.
+
+      %a.info#doing{:href => "#"} 
+        WHAT WE'RE DOING
+
+      %p.doing
+        We have created an SMS-based platform for children to learn. Currently it works for here.
+
+      %a.info#who{:href => "#"} 
+        WHO WE ARE
+
+      %p.who We are students.
+    
+    .links
+      %a.link.demo-link{:href => "#"} 
+        SEE THE DEMO →
+
+      %a.link.description-link{:href => "#"} 
+        BACK TO DESCRIPTION →
+
+    %section.video
+      %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "//www.youtube.com/embed/4nmDKlh3blI", :width => "520"}
+
+
+
+:javascript
+  $(".info").on("click", function(e) {
+    e.preventDefault;
+    $("section p").hide();
+    $(this).next("p").fadeToggle();
+  });
+
+  $(".demo-link").on("click", function(e) {
+    e.preventDefault;
+    $( ".video" ).animate({ "right": "+=700px" }, "slow" );
+    $(".description-link").toggle().css("display", "block");
+    $(this).toggle();
+  });
+  
+  $(".description-link").on("click", function(e) {
+    e.preventDefault;
+    $( ".video" ).animate({ "right": "-=700px" }, "slow" );
+    $(".demo-link").toggle();
+    $(this).toggle();
+  });
+
