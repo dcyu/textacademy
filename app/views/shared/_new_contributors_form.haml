@@ -1,0 +1,13 @@
+%h3.green SIGN UP
+- @contributor = Contributor.new
+= form_for @contributor do |f|
+  - if @contributor.errors.any?
+    .error_messages
+      %h2 Form is invalid
+      %ul
+        - for message in @contributor.errors.full_messages
+          %li= message
+  = f.text_field :username, placeholder: "Username"
+  = f.password_field :password, placeholder: "Password"
+  = f.password_field :password_confirmation, placeholder: "Repeat Password"
+  = f.submit "Sign Up"

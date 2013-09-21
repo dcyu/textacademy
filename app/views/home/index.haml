@@ -25,7 +25,7 @@
         %b.white 
           TEXT
           %span.green> ACADEMY
-        is an entirely SMS-based learning platform for students in the developing world.
+        is an interactive SMS-based learning platform for students in the developing world.
 
       %a.info#problem{:href => "#"} 
         THE PROBLEM
@@ -85,12 +85,16 @@
       %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "//www.youtube.com/embed/4nmDKlh3blI", :width => "520"}
 
     %section.sign-up
+      = render 'shared/new_contributors_form'
       %a.back{:href => "#"} 
-        Back
+        Back →
+
 
     %section.sign-in
+      = render 'shared/sign_in_form'
       %a.back{:href => "#"} 
-        Back2
+        Back →
+
 
 
 
