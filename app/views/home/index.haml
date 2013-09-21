@@ -1,95 +1,95 @@
-%header 
-  %h1 
-    %a#home{:href => "#"} 
+%header
+  %h1
+    %a#home{:href => "#"}
       %span.white> TEXT
       %span.green> ACADEMY
 
-  / %nav 
-  /   %ul 
-  /     %a{:href => "#"} 
+  / %nav
+  /   %ul
+  /     %a{:href => "#"}
   /       %li
   /         The Problem
-  /     %a{:href => "#"} 
-  /       %li 
-  /         What We're Doing 
-  /     %a{:href => "#"} 
-  /       %li 
+  /     %a{:href => "#"}
+  /       %li
+  /         What We're Doing
+  /     %a{:href => "#"}
+  /       %li
   /         Who We Are
 
 .wrapper
   .container.first
-    / %aside 
-    
-    %section.description 
-      %p.home 
-        %b.white 
+    / %aside
+
+    %section.description
+      %p.home
+        %b.white
           TEXT
           %span.green> ACADEMY
         is an entirely SMS-based learning platform for students in the developing world.
 
-      %a.info#problem{:href => "#"} 
+      %a.info#problem{:href => "#"}
         THE PROBLEM
 
       %p.problem
         Students in the developing world often don't have access to textbooks, but over 90% of the population owns a mobile phone.
 
-      %a.info#doing{:href => "#"} 
+      %a.info#doing{:href => "#"}
         WHAT WE'RE DOING
 
       %p.doing
         We have created an SMS-based platform for children to learn. Currently it works for here.
 
-      %a.info#who{:href => "#"} 
+      %a.info#who{:href => "#"}
         WHO WE ARE
 
       %p.who We are students.
 
-      %a.info#try{:href => "#"} 
+      %a.info#try{:href => "#"}
         TRY IT NOW
 
       %p.try
-        To start learning through 
-        %b.white 
+        To start learning through
+        %b.white
           TEXT
           %span.green> ACADEMY
         simply text "
         %span.green> Start learning
         " to 1-630-657-0319.
 
-      %a.info#contribute{:href => "#"} 
+      %a.info#contribute{:href => "#"}
         CONTRIBUTE CONTENT
 
-      %p.contribute 
-        Add content for 
-        %b.white 
+      %p.contribute
+        Add content for
+        %b.white
           TEXT
           %span.green> ACADEMY
         students to learn!
-        %a#sign-up{:href => "#"} 
-          Sign up 
-        or 
-        %a#sign-in{:href => "#"} 
-          sign in 
+        %a#sign-up{:href => "#"}
+          Sign up
+        or
+        %a#sign-in{:href => "#"}
+          sign in
         now →
 
-    
-    
+
+
     .links
-      %a.link.demo-link{:href => "#"} 
+      %a.link.demo-link{:href => "#"}
         SEE THE DEMO →
 
-      %a.link.description-link{:href => "#"} 
+      %a.link.description-link{:href => "#"}
         BACK TO DESCRIPTION →
 
     %section.video
       %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "//www.youtube.com/embed/4nmDKlh3blI", :width => "520"}
 
     %section.sign-up
-      %a.back{:href => "#"} 
+      %a.back{:href => "#"}
         Back
 
     %section.sign-in
-      %a.back{:href => "#"} 
+      %a.back{:href => "#"}
         Back2
 
 
@@ -113,7 +113,7 @@
     $(".description-link").toggle().css("display", "block");
     $(this).toggle();
   });
-  
+
   $(".description-link").on("click", function(e) {
     e.preventDefault;
     $( ".video" ).animate({ "right": "-=710px" }, "slow" );

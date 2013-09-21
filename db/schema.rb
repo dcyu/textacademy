@@ -33,10 +33,10 @@ ActiveRecord::Schema.define(:version => 20130921193047) do
     t.integer  "exercise_id"
     t.integer  "lesson_id"
     t.integer  "user_id"
-    t.datetime "created_at",                                    :null => false
-    t.datetime "updated_at",                                    :null => false
-    t.text     "correct_exercises",   :default => "'--- []\n'"
-    t.text     "incorrect_exercises", :default => "'--- []\n'"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+    t.text     "correct_exercises",   :default => "'"
+    t.text     "incorrect_exercises", :default => "'"
     t.integer  "exercise_number",     :default => 1
     t.boolean  "attempted",           :default => false
   end
@@ -48,11 +48,11 @@ ActiveRecord::Schema.define(:version => 20130921193047) do
   end
 
   create_table "exercises", :force => true do |t|
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
     t.integer  "lesson_id"
     t.integer  "contributor_id"
-    t.boolean  "approved"
+    t.boolean  "approved",       :default => false
   end
 
   create_table "lessons", :force => true do |t|
