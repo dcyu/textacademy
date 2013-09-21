@@ -1,5 +1,5 @@
 class Lesson < ActiveRecord::Base
-	attr_accessible :curriculum_id, :instruction
+	attr_accessible :curriculum_id, :instruction, :name
 
 	LessonPlan = Lesson.order(&:created_at).collect(&:id)
 

@@ -1,1 +1,1 @@
-ENV['PASSING_LIMIT'] = '3'
+ENV['PASSING_LIMIT'] = '5'

@@ -91,8 +91,8 @@ class CurrentLevel < ActiveRecord::Base
       message += "Congratulations! You have completed the program!"
     else
       update_attributes(lesson_id: lesson_id, attempted: false)
-      message += "Lesson ##{current.lesson.number}\n"
-      message += "#{current.lesson.instruction}\n"
+      message += "Lesson ##{lesson.number}\n"
+      message += "#{lesson.instruction}\n"
       message += "Text NEXT to move to a new level"
     end
   end

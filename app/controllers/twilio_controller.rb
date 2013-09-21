@@ -5,9 +5,9 @@ class TwilioController < ApplicationController
 		if user = User.find_by_phone_number(phone_number)
 			body = params[:Body].chomp
 			current = user.current_level
-			if body.downcase == "begin"
+			if body.downcase.chomp == "begin"
 				@message = current.start_exercise
-			elsif body.downcase == "skip"
+			elsif body.downcase.chomp == "skip"
 				@message = current.skip_exercise
 			elsif body.to_i.to_s == body
 				if current.exercise.correct?(body)
@@ -24,7 +24,7 @@ class TwilioController < ApplicationController
 				# unrecognized input
 				@message = current.represent_question
 			end
-		elsif params[:Body].downcase == "start learning" # Sign up
+		elsif params[:Body].downcase.chomp == "start learning" # Sign up
 			@message = User.sign_up(phone_number)
 		end
 		logger.debug "Message: #{@message}"
