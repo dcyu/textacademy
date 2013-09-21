@@ -1,0 +1,8 @@
+%h1=@lesson.name
+%h2=@lesson.instruction
+
+-@lesson.exercises.each do |exercise|
+	%h3=exercise.question.text
+	%h3=exercise.answer.text
+
+=link_to "Create an exercise", new_exercise_path(lesson_id: @lesson.id)

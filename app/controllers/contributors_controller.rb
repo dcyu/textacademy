@@ -11,4 +11,8 @@ class ContributorsController < ApplicationController
 	    render "new"
 	  end
   end
+
+  def exercises
+    @exercises = Exercise.where(contributor_id: params[:id])
+  end
 end

@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 	  contributor = Contributor.authenticate(params[:username], params[:password])
 	  if contributor
 	    session[:contributor_id] = contributor.id
-	    redirect_to root_url, :notice => "Logged in!"
+	    redirect_to lessons_path, :notice => "Logged in!"
 	  else
 	    flash.now.alert = "Invalid email or password"
 	    render "new"

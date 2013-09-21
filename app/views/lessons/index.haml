@@ -1,0 +1,4 @@
+-@lessons.each do |lesson|
+	%h2=link_to lesson.name, lesson
+	%p="#{lesson.exercises.count} exercises"
+	%h3=lesson.instruction[0..100]

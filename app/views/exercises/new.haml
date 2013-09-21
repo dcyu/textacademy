@@ -1,0 +1,13 @@
+=form_for @exercise do |f|
+	=f.fields_for :question, @question do |question|
+		=question.label :question
+		=question.text_area :text
+
+	=f.fields_for :answer, @answer do |answer|
+		=answer.label :answer
+		=answer.text_area :text
+
+	=f.hidden_field :contributor_id
+	=f.hidden_field :lesson_id
+
+	=f.submit
