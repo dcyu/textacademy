@@ -2,12 +2,12 @@ class User < ActiveRecord::Base
   attr_accessible :phone_number
   has_one :current_level
 
-  # validates_with PhoneHelper::PhoneValidator
-
-  # before_validation do
-  #   parsed = PhoneHelper::parse_phone(self.phone_number) if attribute_present?(:phone_number)
-  #   if not parsed.nil?
-  #     self.phone_number = parsed.to_s
-  #   end
-  # end
+  def self.sign_up(phone_number)
+  	user = User.create(phone_number: phone_number)
+		current = CurrentLevel.create(lesson_id: Lesson.first.id, user_id: user.id, correct_exercises: [], incorrect_exercises: [])
+		message = "Welcome to TextAcademy.\n"
+		message += "Lesson ##{current.lesson.number}\n"
+		message += "#{current.lesson.instruction}\n"
+		message += "Text BEGIN to start the level"
+  end
 end

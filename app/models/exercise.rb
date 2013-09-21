@@ -5,10 +5,6 @@ class Exercise < ActiveRecord::Base
 	has_one :question
 	has_one :answer
 
-	def number
-		lesson.exercises.index(self) + 1
-	end
-
 	def correct?(answer)
 		self.answer.text == answer
 	end

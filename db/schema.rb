@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130921063831) do
+ActiveRecord::Schema.define(:version => 20130921161834) do
 
   create_table "answers", :force => true do |t|
     t.text     "text"
@@ -24,10 +24,12 @@ ActiveRecord::Schema.define(:version => 20130921063831) do
     t.integer  "exercise_id"
     t.integer  "lesson_id"
     t.integer  "user_id"
-    t.datetime "created_at",                                    :null => false
-    t.datetime "updated_at",                                    :null => false
-    t.text     "correct_exercises",   :default => "'--- []\n'"
-    t.text     "incorrect_exercises", :default => "'--- []\n'"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+    t.text     "correct_exercises",   :default => "'"
+    t.text     "incorrect_exercises", :default => "'"
+    t.integer  "exercise_number",     :default => 1
+    t.boolean  "attempted",           :default => false
   end
 
   create_table "curriculums", :force => true do |t|
