@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  exercise_id: 1
+  lesson_id: 1
+  correct_exercises: 1
+  incorrect_exercises: 1
+  user_id: 1
+
+two:
+  exercise_id: 1
+  lesson_id: 1
+  correct_exercises: 1
+  incorrect_exercises: 1
+  user_id: 1
