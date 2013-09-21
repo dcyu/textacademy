@@ -18,6 +18,7 @@
 
 .wrapper
   .container.first
+    %aside 
     
     %section 
       %p.home 
@@ -26,19 +27,19 @@
           %span.green> Academy 
         is a thing that we hope can help people in the developing world.
 
-      %a.info.first{:href => "#"} 
+      %a.info#problem{:href => "#"} 
         The Problem
 
       %p.problem
         We are solving the problem of children in the developing world not having textbooks.
 
-      %a.info{:href => "#"} 
+      %a.info#doing{:href => "#"} 
         What We're Doing
 
       %p.doing
         We have created an SMS-based platform for children to learn. Currently it works for here.
 
-      %a.info{:href => "#"} 
+      %a.info#who{:href => "#"} 
         Who We Are
 
       %p.who We are students.
@@ -49,9 +50,7 @@
 :javascript
   $(".info").on("click", function(e) {
     e.preventDefault;
-    $(this).prev("p").hide();
-    $(this).hide();
-    $(this).nextAll("a").first().fadeToggle();
+    $("section p").hide();
     $(this).next("p").fadeToggle();
   });
     
