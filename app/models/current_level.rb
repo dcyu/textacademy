@@ -4,8 +4,15 @@ class CurrentLevel < ActiveRecord::Base
   serialize :correct_exercises
   serialize :incorrect_exercises
 
-  belongs_to :user_id
-  has_one :exercise
-  has_one :lesson
+  belongs_to :user
+
+  def lesson
+  	Lesson.find(lesson_id)
+  end
+
+  def exercise
+  	Exercise.find(exercise_id)
+  end
+
 
 end
