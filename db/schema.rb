@@ -11,13 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130921181031) do
+ActiveRecord::Schema.define(:version => 20130921193047) do
 
   create_table "answers", :force => true do |t|
     t.text     "text"
     t.integer  "exercise_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "contributors", :force => true do |t|
+    t.string   "username"
+    t.string   "password_hash"
+    t.string   "password_salt"
+    t.boolean  "is_admin"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "current_levels", :force => true do |t|
@@ -39,9 +48,11 @@ ActiveRecord::Schema.define(:version => 20130921181031) do
   end
 
   create_table "exercises", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
     t.integer  "lesson_id"
+    t.integer  "contributor_id"
+    t.boolean  "approved"
   end
 
   create_table "lessons", :force => true do |t|

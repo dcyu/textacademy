@@ -12,6 +12,8 @@ gem 'jquery-rails'
 
 gem 'pry'
 
+gem 'bcrypt-ruby'
+
 group :development do
   gem 'better_errors'
 end
