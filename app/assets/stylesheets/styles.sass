@@ -1,9 +1,11 @@
 $green: #61B329
+$pink: #e55ea2
 
 a
   text-decoration: none
   color: $green
-
+  &:hover
+    color: #fff
 aside
   position: absolute
   right: 0
@@ -60,7 +62,7 @@ header
 
 .link
   font-size: 2em
-  color: #fff
+  color: $pink
   text-align: center
   font-weight: bold
   line-height: 60px
@@ -81,7 +83,7 @@ header
 .green
   color: $green
 
-.problem, .doing, .who
+.problem, .doing, .who, .try, .contribute
   display: none
 
 iframe
@@ -125,6 +127,13 @@ iframe
 #who
   bottom: -135px 
 
+#try
+  bottom: -180px
+
+#contribute
+  bottom: -225px
+  color: $pink
+
 section
   position: absolute
   z-index: 2
@@ -136,11 +145,11 @@ section
   background: #000
   color: #ccc
   box-shadow: 0 0 5px #fff
-  &.video
+  &.video, &.sign-up, &.sign-in
     background: #000
     z-index: 5
     height: 416px
-    right: -700px
+    right: -710px
   p
     font-size: 2em
     padding: 50px

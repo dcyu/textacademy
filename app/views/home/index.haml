@@ -1,6 +1,6 @@
 %header 
   %h1 
-    %a{:href => "#"} 
+    %a#home{:href => "#"} 
       %span.white> TEXT
       %span.green> ACADEMY
 
@@ -43,6 +43,36 @@
         WHO WE ARE
 
       %p.who We are students.
+
+      %a.info#try{:href => "#"} 
+        TRY IT NOW
+
+      %p.try
+        To start learning through 
+        %b.white 
+          TEXT
+          %span.green> ACADEMY
+        simply text "
+        %span.green> Start learning
+        " to 1-630-657-0319.
+
+      %a.info#contribute{:href => "#"} 
+        CONTRIBUTE CONTENT
+
+      %p.contribute 
+        Add content for 
+        %b.white 
+          TEXT
+          %span.green> ACADEMY
+        students to learn!
+        %a#sign-up{:href => "#"} 
+          Sign up 
+        or 
+        %a#sign-in{:href => "#"} 
+          sign in 
+        now →
+
+    
     
     .links
       %a.link.demo-link{:href => "#"} 
@@ -54,9 +84,23 @@
     %section.video
       %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "//www.youtube.com/embed/4nmDKlh3blI", :width => "520"}
 
+    %section.sign-up
+      %a.back{:href => "#"} 
+        Back
+
+    %section.sign-in
+      %a.back{:href => "#"} 
+        Back2
+
+
 
 
 :javascript
+  $("#home").on("click", function() {
+    $("section p").hide();
+    $(".home").fadeToggle();
+  });
+
   $(".info").on("click", function(e) {
     e.preventDefault;
     $("section p").hide();
@@ -65,15 +109,27 @@
 
   $(".demo-link").on("click", function(e) {
     e.preventDefault;
-    $( ".video" ).animate({ "right": "+=700px" }, "slow" );
+    $( ".video" ).animate({ "right": "+=710px" }, "slow" );
     $(".description-link").toggle().css("display", "block");
     $(this).toggle();
   });
   
   $(".description-link").on("click", function(e) {
     e.preventDefault;
-    $( ".video" ).animate({ "right": "-=700px" }, "slow" );
+    $( ".video" ).animate({ "right": "-=710px" }, "slow" );
     $(".demo-link").toggle();
     $(this).toggle();
+  });
+
+  $("#sign-up").on("click", function() {
+    $(".sign-up").animate({ "right": "+=710px" }, "slow" );
+  });
+
+  $("#sign-in").on("click", function() {
+    $(".sign-in").animate({ "right": "+=710px" }, "slow" );
+  });
+
+  $(".back").on("click", function() {
+    $(this).closest("section").animate({ "right": "-=710px" }, "slow" );
   });
 
