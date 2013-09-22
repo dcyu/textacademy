@@ -1,149 +1,171 @@
-.container.first
-  / %aside
+%header
+  %h1
+    %a#home{:href => "#{root_path}"}
+      %span.white> TEXT
+      %span.green> ACADEMY
 
-  %section.description
-    %p.home
-      %b.white
-        TEXT
-        %span.green> ACADEMY
-      is an interactive SMS-based learning platform for students in the developing world.
+  %p.right.white
+    - if @current_contributor.present?
+      %a.nav-link{:href => "#{lessons_path}"}
+        LESSONS
+      |
+      %a.nav-link{:href => "#{sign_out_path}"}
+        SIGN OUT
+    - else
+      %a.sign-up-link.nav-link{:href => "#"}
+        SIGN UP
+      |
+      %a.sign-in-link.nav-link{:href => "#"}
+        SIGN IN
 
-    %a.info#problem{:href => "#"}
-      THE PROBLEM
+.wrapper
 
-    %p.problem
-      Millions of students across the developing world don't have access to textbooks or learning materials. Furthermore, technology is extremely underutilized as a learning tool even though over
-      %span.green 89.4% 
-      of the people in the developing world own a mobile phone.
+  .container.first
+    / %aside
 
-    %a.info#sms{:href => "#"}
-      SMS LEARNING
+    %section.description
+      %p.home
+        %b.white
+          TEXT
+          %span.green> ACADEMY
+        is an interactive SMS-based learning platform for students in the developing world.
 
-    %p.sms
-      In order to help provide quality learning materials to students and take advantage of the amazing growth in mobile technology, we created an SMS-based platform to help students learn. We specifically targeted SMS because the vast majority of phones in the developing world are basic feature phones. Through the Twilio API, we built out a series of lessons that provide instruction as well as exercizes to teach new content.
+      %a.info#problem{:href => "#"}
+        THE PROBLEM
 
-    %a.info#open{:href => "#"}
-      OPEN CONTENT
+      %p.problem
+        Millions of students across the developing world don't have access to textbooks or learning materials. Furthermore, technology is extremely underutilized as a learning tool even though over
+        %span.green 89.4%
+        of the people in the developing world own a mobile phone.
 
-    %p.open
-      In addition to the SMS platform, we created an open web application that allows anyone to register for an account and contribute exercizes to help grow the content libraries. Through this open-source model, we hope to allow people from all over the world to collaborate in creating quality content.
+      %a.info#sms{:href => "#"}
+        SMS LEARNING
 
-    %a.info#who{:href => "#"}
-      WHO WE ARE
+      %p.sms
+        In order to help provide quality learning materials to students and take advantage of the amazing growth in mobile technology, we created an SMS-based platform to help students learn. We specifically targeted SMS because the vast majority of phones in the developing world are basic feature phones. Through the Twilio API, we built out a series of lessons that provide instruction as well as exercizes to teach new content.
 
-    %p.who 
-      %b.white
-        TEXT
-        %span.green> ACADEMY
-      was created by 
-      %span.green 
-        Anjalia Huja
-        %span.white>, 
-      %span.green 
-        Shaan Sapra
-        %span.white>,
-      and
-      %span.green 
-        Daniel Yu
-        %span.white>
-      for MHacks 2013. Shaan and Daniel have previously collaborated in building
-      %a{:href => "http://projectsam.net/", target: "_blank"} 
-        Project SAM
-        %span.white>,
-      a platform for health clinics in the developing world to manage their invetory.
+      %a.info#open{:href => "#"}
+        OPEN CONTENT
 
+      %p.open
+        In addition to the SMS platform, we created an open web application that allows anyone to register for an account and contribute exercizes to help grow the content libraries. Through this open-source model, we hope to allow people from all over the world to collaborate in creating quality content.
 
-    %a.info#try{:href => "#"}
-      TRY IT NOW
+      %a.info#who{:href => "#"}
+        WHO WE ARE
 
-    %p.try
-      To try out
-      %b.white
-        TEXT
-        %span.green> ACADEMY
-      for yourself simply text "
-      %span.green> Start learning
-      " to 1-630-657-0319.
-
-    %a.info#contribute{:href => "#"}
-      CONTRIBUTE CONTENT
-
-    %p.contribute
-      Add content for
-      %b.white
-        TEXT
-        %span.green> ACADEMY
-      students to learn!
-      %a.sign-up-link{:href => "#"}
-        Sign up
-      or
-      %a.sign-in-link{:href => "#"}
-        sign in
-      now →
+      %p.who
+        %b.white
+          TEXT
+          %span.green> ACADEMY
+        was created by
+        %span.green
+          Anjali Ahuja
+          %span.white>,
+        %span.green
+          Shaan Sapra
+          %span.white>,
+        and
+        %span.green
+          Daniel Yu
+          %span.white>
+        for MHacks 2013. Shaan and Daniel have previously collaborated in building
+        %a{:href => "http://projectsam.net/", target: "_blank"}
+          Project SAM
+          %span.white>,
+        a platform for health clinics in the developing world to manage their invetory.
 
 
+      %a.info#try{:href => "#"}
+        TRY IT NOW
 
-  .links
-    %a.link.demo-link{:href => "#"}
-      SEE THE DEMO →
+      %p.try
+        To try out
+        %b.white
+          TEXT
+          %span.green> ACADEMY
+        for yourself simply text "
+        %span.green> Start learning
+        " to 1-630-657-0319.
 
-    %a.link.description-link{:href => "#"}
-      BACK TO DESCRIPTION →
+      %a.info#contribute{:href => "#"}
+        CONTRIBUTE CONTENT
 
-  %section.video
-    %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "//www.youtube.com/embed/4nmDKlh3blI", :width => "520"}
-
-  %section.sign-up
-    = render 'shared/new_contributors_form'
-    %a.back{:href => "#"} 
-      Back →
-
-
-  %section.sign-in
-    = render 'shared/sign_in_form'
-    %a.back{:href => "#"} 
-      Back →
-
+      %p.contribute
+        Add content for
+        %b.white
+          TEXT
+          %span.green> ACADEMY
+        students to learn!
+        %a.sign-up-link{:href => "#"}
+          Sign up
+        or
+        %a.sign-in-link{:href => "#"}
+          sign in
+        now →
 
 
 
-:javascript
-  $("#home").on("click", function() {
-    $("section p").hide();
-    $(".home").fadeToggle();
-  });
+    .links
+      %a.link.demo-link{:href => "#"}
+        SEE THE DEMO →
 
-  $(".info").on("click", function(e) {
-    e.preventDefault;
-    $("section p").hide();
-    $(this).next("p").fadeToggle();
-  });
+      %a.link.description-link{:href => "#"}
+        BACK TO DESCRIPTION →
 
-  $(".demo-link").on("click", function(e) {
-    e.preventDefault;
-    $( ".video" ).animate({ "right": "+=710px" }, "slow" );
-    $(".description-link").toggle().css("display", "block");
-    $(this).toggle();
-  });
+    %section.video
+      %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "//www.youtube.com/embed/4nmDKh3blI", :width => "520"}
 
-  $(".description-link").on("click", function(e) {
-    e.preventDefault;
-    $( ".video" ).animate({ "right": "-=710px" }, "slow" );
-    $(".demo-link").toggle();
-    $(this).toggle();
-  });
+    %section.sign-up
+      = render 'shared/new_contributors_form'
+      %a.back{:href => "#"}
+        Back →
 
-  $(".sign-up-link").on("click", function() {
-    $(".sign-up").animate({ "right": "0px" }, "slow" );
-    $(".sign-in").animate({ "right": "-710px" }, "slow" );
-  });
 
-  $(".sign-in-link").on("click", function() {
-    $(".sign-in").animate({ "right": "0px" }, "slow" );
-    $(".sign-up").animate({ "right": "-710px" }, "slow" );
-  });
+    %section.sign-in
+      = render 'shared/sign_in_form'
+      %a.back{:href => "#"}
+        Back →
 
-  $(".back").on("click", function() {
-    $(this).closest("section").animate({ "right": "-710px" }, "slow" );
-  });
+
+
+
+  :javascript
+    $("#home").on("click", function() {
+      $("section p").hide();
+      $(".home").fadeToggle();
+    });
+
+    $(".info").on("click", function(e) {
+      e.preventDefault;
+      $("section p").hide();
+      $(this).next("p").fadeToggle();
+    });
+
+    $(".demo-link").on("click", function(e) {
+      e.preventDefault;
+      $( ".video" ).animate({ "right": "+=710px" }, "slow" );
+      $(".description-link").toggle().css("display", "block");
+      $(this).toggle();
+    });
+
+    $(".description-link").on("click", function(e) {
+      e.preventDefault;
+      $( ".video" ).animate({ "right": "-=710px" }, "slow" );
+      $(".demo-link").toggle();
+      $(this).toggle();
+    });
+
+    $(".sign-up-link").on("click", function() {
+      $(".sign-up").animate({ "right": "0px" }, "slow" );
+      $(".sign-in").animate({ "right": "-710px" }, "slow" );
+    });
+
+    $(".sign-in-link").on("click", function() {
+      $(".sign-in").animate({ "right": "0px" }, "slow" );
+      $(".sign-up").animate({ "right": "-710px" }, "slow" );
+    });
+
+    $(".back").on("click", function() {
+      $(this).closest("section").animate({ "right": "-710px" }, "slow" );
+    });
 

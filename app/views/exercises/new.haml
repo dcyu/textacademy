@@ -1,16 +1,37 @@
-.container.lessons
-	.content
-		-if flash[:error]
-			=flash[:error]
+%header
+  %h1
+    %a#home{:href => "#{root_path}"}
+      %span.white> TEXT
+      %span.green> ACADEMY
 
-		=form_for @exercise do |f|
-			=f.fields_for :question, @question do |question|
-				=question.text_area :text, placeholder: "Write your exercise question here.", class: "question-input"
+  %p.right.white
+    - if @current_contributor.present?
+      %a.nav-link{:href => "#{lessons_path}"}
+        LESSONS
+      |
+      %a.nav-link{:href => "#{sign_out_path}"}
+        SIGN OUT
+    - else
+      %a.sign-up-link.nav-link{:href => "#"}
+        SIGN UP
+      |
+      %a.sign-in-link.nav-link{:href => "#"}
+        SIGN IN
 
-			=f.fields_for :answer, @answer do |answer|
-				=answer.text_area :text, placeholder: "Write the answer to your exercise question here.", class: "answer-input"
+.wrapper
+	.container.lessons
+		.content
+			-if flash[:error]
+				=flash[:error]
 
-			=f.hidden_field :contributor_id
-			=f.hidden_field :lesson_id
+			=form_for @exercise do |f|
+				=f.fields_for :question, @question do |question|
+					=question.text_area :text, placeholder: "Write your exercise question here.", class: "question-input"
 
-			=f.submit
+				=f.fields_for :answer, @answer do |answer|
+					=answer.text_area :text, placeholder: "Write the answer to your exercise question here.", class: "answer-input"
+
+				=f.hidden_field :contributor_id
+				=f.hidden_field :lesson_id
+
+				=f.submit

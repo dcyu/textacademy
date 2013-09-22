@@ -1,16 +1,37 @@
-.container.lessons
-  .content
-    %h1=@lesson.name
-    %p=@lesson.instruction
+%header
+  %h1
+    %a#home{:href => "#{root_path}"}
+      %span.white> TEXT
+      %span.green> ACADEMY
 
-    -@lesson.exercises.each do |exercise|
-      %p.question
-        %b.label 
-          Question:
-        = exercise.question.text
-      %p.answer
-        %b.label 
-          Answer:
-        = exercise.answer.text
-    %b 
-      =link_to "Add an exercise →", new_exercise_path(lesson_id: @lesson.id)
+  %p.right.white
+    - if @current_contributor.present?
+      %a.nav-link{:href => "#{lessons_path}"}
+        LESSONS
+      |
+      %a.nav-link{:href => "#{sign_out_path}"}
+        SIGN OUT
+    - else
+      %a.sign-up-link.nav-link{:href => "#"}
+        SIGN UP
+      |
+      %a.sign-in-link.nav-link{:href => "#"}
+        SIGN IN
+
+.wrapper
+  .container.lessons
+    .content
+      %h1=@lesson.name
+      %p=@lesson.instruction
+
+      -@lesson.exercises.each do |exercise|
+        %p.question
+          %b.label
+            Question:
+          = exercise.question.text
+        %p.answer
+          %b.label
+            Answer:
+          = exercise.answer.text
+      %b
+        =link_to "Add an exercise →", new_exercise_path(lesson_id: @lesson.id)
