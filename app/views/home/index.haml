@@ -12,28 +12,51 @@
       THE PROBLEM
 
     %p.problem
-      Students in the developing world often don't have access to textbooks, but over 90% of the population owns a mobile phone.
+      Millions of students across the developing world don't have access to textbooks or learning materials. Furthermore, technology is extremely underutilized as a learning tool even though over
+      %span.green 89.4% 
+      of the people in the developing world own a mobile phone.
 
-    %a.info#doing{:href => "#"}
-      WHAT WE'RE DOING
+    %a.info#sms{:href => "#"}
+      SMS LEARNING
 
-    %p.doing
-      We have created an SMS-based platform for children to learn. Currently it works for here.
+    %p.sms
+      In order to help provide quality learning materials to students and take advantage of the amazing growth in mobile technology, we created an SMS-based platform to help students learn. We specifically targeted SMS because the vast majority of phones in the developing world are basic feature phones. Through the Twilio API, we built out a series of lessons that provide instruction as well as exercizes to teach new content.
+
+    %a.info#open{:href => "#"}
+      OPEN CONTENT
+
+    %p.open
+      In addition to the SMS platform, we created an open web application that allows anyone to register for an account and contribute exercizes to help grow the content libraries. Through this open-source model, we hope to allow people from all over the world to collaborate in creating quality content.
 
     %a.info#who{:href => "#"}
       WHO WE ARE
 
-    %p.who We are students.
+    %p.who 
+      %b.white
+        TEXT
+        %span.green> ACADEMY
+      was created by 
+      %span.green 
+        Anjalia Huja
+        %span.white>, 
+      %span.green 
+        Shaan Sapra
+        %span.white>,
+      and
+      %span.green 
+        Daniel Yu
+        %span.white>
+      for MHacks 2013. Shaan and Daniel have previously collaborated in buil
 
     %a.info#try{:href => "#"}
       TRY IT NOW
 
     %p.try
-      To start learning through
+      To try out
       %b.white
         TEXT
         %span.green> ACADEMY
-      simply text "
+      for yourself simply text "
       %span.green> Start learning
       " to 1-630-657-0319.
 
@@ -46,10 +69,10 @@
         TEXT
         %span.green> ACADEMY
       students to learn!
-      %a#sign-up{:href => "#"}
+      %a.sign-up-link{:href => "#"}
         Sign up
       or
-      %a#sign-in{:href => "#"}
+      %a.sign-in-link{:href => "#"}
         sign in
       now →
 
@@ -105,15 +128,17 @@
     $(this).toggle();
   });
 
-  $("#sign-up").on("click", function() {
-    $(".sign-up").animate({ "right": "+=710px" }, "slow" );
+  $(".sign-up-link").on("click", function() {
+    $(".sign-up").animate({ "right": "0px" }, "slow" );
+    $(".sign-in").animate({ "right": "-710px" }, "slow" );
   });
 
-  $("#sign-in").on("click", function() {
-    $(".sign-in").animate({ "right": "+=710px" }, "slow" );
+  $(".sign-in-link").on("click", function() {
+    $(".sign-in").animate({ "right": "0px" }, "slow" );
+    $(".sign-up").animate({ "right": "-710px" }, "slow" );
   });
 
   $(".back").on("click", function() {
-    $(this).closest("section").animate({ "right": "-=710px" }, "slow" );
+    $(this).closest("section").animate({ "right": "-710px" }, "slow" );
   });
 

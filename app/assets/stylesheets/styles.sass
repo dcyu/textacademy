@@ -59,9 +59,9 @@ header
   p
     padding: 0
     margin: 0
-  #sign-up
+  .sign-up-link
     z-index: 5
-  #sign-in
+  .sign-in-link
     z-index: 6
   nav
     float: right
@@ -136,8 +136,14 @@ form
 .green
   color: $green
 
-.problem, .doing, .who, .try, .contribute
+.problem, .sms, .open, .who, .try, .contribute
   display: none
+
+.problem
+  font-size: 1.5em
+
+.sms, .open, .who
+  font-size: 1.2em
 
 iframe
   width: 520px
@@ -179,17 +185,20 @@ iframe
 #problem
   bottom: -45px
 
-#doing
+#sms
   bottom: -90px
 
-#who
+#open
   bottom: -135px 
 
-#try
+#who
   bottom: -180px
 
-#contribute
+#try
   bottom: -225px
+
+#contribute
+  bottom: -270px
   color: $pink
   &:hover
     color: #fff
