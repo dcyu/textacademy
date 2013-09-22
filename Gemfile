@@ -14,6 +14,10 @@ gem 'pry'
 
 gem 'bcrypt-ruby'
 
+gem 'capistrano'
+
+gem 'unicorn'
+
 group :development do
   gem 'better_errors'
 end
