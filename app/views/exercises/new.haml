@@ -1,14 +1,16 @@
 .container.lessons
-  .content
-  
-    =form_for @exercise do |f|
-      =f.fields_for :question, @question do |question|
-        =question.text_area :text, placeholder: "Write your exercise question here.", class: "question-input"
+	.content
+		-if flash[:error]
+			=flash[:error]
 
-      =f.fields_for :answer, @answer do |answer|
-        =answer.text_area :text, placeholder: "Write the answer to your exercise question here.", class: "answer-input"
+		=form_for @exercise do |f|
+			=f.fields_for :question, @question do |question|
+				=question.text_area :text, placeholder: "Write your exercise question here.", class: "question-input"
 
-      =f.hidden_field :contributor_id
-      =f.hidden_field :lesson_id
+			=f.fields_for :answer, @answer do |answer|
+				=answer.text_area :text, placeholder: "Write the answer to your exercise question here.", class: "answer-input"
 
-      =f.submit
+			=f.hidden_field :contributor_id
+			=f.hidden_field :lesson_id
+
+			=f.submit

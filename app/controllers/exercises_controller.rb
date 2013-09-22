@@ -9,8 +9,12 @@ class ExercisesController < ApplicationController
 
 	def create
 		@exercise = Exercise.new(params[:exercise])
-		@exercise.save
-		redirect_to @exercise.lesson
+		if @exercise.save
+			redirect_to @exercise.lesson
+		else
+			flash[:error] = "Invalid fields"
+			render "new"
+		end
 	end
 
 
