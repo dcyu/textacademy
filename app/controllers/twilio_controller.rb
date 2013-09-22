@@ -28,6 +28,15 @@ class TwilioController < ApplicationController
 			@message = User.sign_up(phone_number)
 		end
 		Rails.logger.info "Message: #{@message}"
+
+		@twilio_client = Twilio::REST::Client.new ENV['ACCOUNT_SID'], ENV['AUTH_TOKEN']
+
+    @twilio_client.account.sms.messages.create(
+      :from => ENV['PHONE_NUMBER'],
+      :to => params[:From],
+      :body => @message
+    )
+
     render 'process_sms.xml.erb', :content_type => 'text/xml'
   end
 
