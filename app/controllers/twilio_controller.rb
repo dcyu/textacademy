@@ -27,7 +27,7 @@ class TwilioController < ApplicationController
 		elsif params[:Body].downcase.chomp == "start learning" # Sign up
 			@message = User.sign_up(phone_number)
 		end
-		logger.debug "Message: #{@message}"
+		Rails.logger.info "Message: #{@message}"
     render 'process_sms.xml.erb', :content_type => 'text/xml'
   end
 
