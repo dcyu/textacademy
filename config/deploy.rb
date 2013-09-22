@@ -4,7 +4,7 @@ set :application, "textacademy"
 set :user, "ssapra"
  
 set :scm, :git
-set :repository, "https://github.com/dcyu/textacademy.git"
+set :repository, "git@github.com:dcyu/textacademy.git"
 set :branch, "master"
 set :use_sudo, true
  
