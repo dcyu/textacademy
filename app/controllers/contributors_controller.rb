@@ -6,9 +6,10 @@ class ContributorsController < ApplicationController
   def create
   	@contributor = Contributor.new(params[:contributor])
 	  if @contributor.save
-	    redirect_to root_url, :notice => "Signed up!"
+      session[:contributor_id] = @contributor.id
+	    redirect_to lessons_path
 	  else
-	    render "new"
+      redirect_to root_url
 	  end
   end
 
