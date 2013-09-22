@@ -1,6 +1,7 @@
 .container.lessons
   .content
-    %h1.ta-center Current Lessons
+    %h1 Current Lessons
+    %p Click on a lesson below to see current exercises and add your own!
     -@lessons.each do |lesson|
       %h2=link_to lesson.name, lesson
       %b.exercise-amount="#{lesson.exercises.count} exercises"
