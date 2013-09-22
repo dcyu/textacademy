@@ -2,8 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 
-gem 'sqlite3'
-
 gem 'haml-rails'
 
 gem 'twilio-ruby'
@@ -20,6 +18,7 @@ gem 'unicorn'
 
 group :development do
   gem 'better_errors'
+  gem 'sqlite3'
 end
 
 group :assets do
