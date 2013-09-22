@@ -1,8 +1,16 @@
-%h1=@lesson.name
-%h2=@lesson.instruction
+.container.lessons
+  .content
+    %h1=@lesson.name
+    %p=@lesson.instruction
 
--@lesson.exercises.each do |exercise|
-	%h3=exercise.question.text
-	%h3=exercise.answer.text
-
-=link_to "Create an exercise", new_exercise_path(lesson_id: @lesson.id)
+    -@lesson.exercises.each do |exercise|
+      %p.question
+        %b.label 
+          Question:
+        = exercise.question.text
+      %p.answer
+        %b.label 
+          Answer:
+        = exercise.answer.text
+    %b 
+      =link_to "Add an exercise →", new_exercise_path(lesson_id: @lesson.id)

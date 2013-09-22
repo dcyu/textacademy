@@ -1,5 +1,5 @@
-%h3 SIGN IN
+%h3.green SIGN IN
 = form_tag sessions_path do
   = text_field_tag :username, params[:username], placeholder: "Username"
   = password_field_tag :password
-  = submit_tag "Log in"
+  = submit_tag "Sign in"

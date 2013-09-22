@@ -1,99 +1,80 @@
-%header
-  %h1
-    %a#home{:href => "#"}
-      %span.white> TEXT
-      %span.green> ACADEMY
+.container.first
+  / %aside
 
-  / %nav
-  /   %ul
-  /     %a{:href => "#"}
-  /       %li
-  /         The Problem
-  /     %a{:href => "#"}
-  /       %li
-  /         What We're Doing
-  /     %a{:href => "#"}
-  /       %li
-  /         Who We Are
+  %section.description
+    %p.home
+      %b.white
+        TEXT
+        %span.green> ACADEMY
+      is an interactive SMS-based learning platform for students in the developing world.
 
-.wrapper
-  .container.first
-    / %aside
+    %a.info#problem{:href => "#"}
+      THE PROBLEM
 
-    %section.description
-      %p.home
-        %b.white
-          TEXT
-          %span.green> ACADEMY
-        is an interactive SMS-based learning platform for students in the developing world.
+    %p.problem
+      Students in the developing world often don't have access to textbooks, but over 90% of the population owns a mobile phone.
 
-      %a.info#problem{:href => "#"}
-        THE PROBLEM
+    %a.info#doing{:href => "#"}
+      WHAT WE'RE DOING
 
-      %p.problem
-        Students in the developing world often don't have access to textbooks, but over 90% of the population owns a mobile phone.
+    %p.doing
+      We have created an SMS-based platform for children to learn. Currently it works for here.
 
-      %a.info#doing{:href => "#"}
-        WHAT WE'RE DOING
+    %a.info#who{:href => "#"}
+      WHO WE ARE
 
-      %p.doing
-        We have created an SMS-based platform for children to learn. Currently it works for here.
+    %p.who We are students.
 
-      %a.info#who{:href => "#"}
-        WHO WE ARE
+    %a.info#try{:href => "#"}
+      TRY IT NOW
 
-      %p.who We are students.
+    %p.try
+      To start learning through
+      %b.white
+        TEXT
+        %span.green> ACADEMY
+      simply text "
+      %span.green> Start learning
+      " to 1-630-657-0319.
 
-      %a.info#try{:href => "#"}
-        TRY IT NOW
+    %a.info#contribute{:href => "#"}
+      CONTRIBUTE CONTENT
 
-      %p.try
-        To start learning through
-        %b.white
-          TEXT
-          %span.green> ACADEMY
-        simply text "
-        %span.green> Start learning
-        " to 1-630-657-0319.
-
-      %a.info#contribute{:href => "#"}
-        CONTRIBUTE CONTENT
-
-      %p.contribute
-        Add content for
-        %b.white
-          TEXT
-          %span.green> ACADEMY
-        students to learn!
-        %a#sign-up{:href => "#"}
-          Sign up
-        or
-        %a#sign-in{:href => "#"}
-          sign in
-        now →
+    %p.contribute
+      Add content for
+      %b.white
+        TEXT
+        %span.green> ACADEMY
+      students to learn!
+      %a#sign-up{:href => "#"}
+        Sign up
+      or
+      %a#sign-in{:href => "#"}
+        sign in
+      now →
 
 
 
-    .links
-      %a.link.demo-link{:href => "#"}
-        SEE THE DEMO →
+  .links
+    %a.link.demo-link{:href => "#"}
+      SEE THE DEMO →
 
-      %a.link.description-link{:href => "#"}
-        BACK TO DESCRIPTION →
+    %a.link.description-link{:href => "#"}
+      BACK TO DESCRIPTION →
 
-    %section.video
-      %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "//www.youtube.com/embed/4nmDKlh3blI", :width => "520"}
+  %section.video
+    %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "//www.youtube.com/embed/4nmDKlh3blI", :width => "520"}
 
-    %section.sign-up
-      = render 'shared/new_contributors_form'
-      %a.back{:href => "#"} 
-        Back →
+  %section.sign-up
+    = render 'shared/new_contributors_form'
+    %a.back{:href => "#"} 
+      Back →
 
 
-    %section.sign-in
-      = render 'shared/sign_in_form'
-      %a.back{:href => "#"} 
-        Back →
+  %section.sign-in
+    = render 'shared/sign_in_form'
+    %a.back{:href => "#"} 
+      Back →
 
 
 

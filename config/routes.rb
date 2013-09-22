@@ -4,6 +4,7 @@ Textacademy::Application.routes.draw do
 
   resources :contributors, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
+  get "sign_out" => "sessions#destroy", :as => "sign_out"
   resources :exercises, only: [:new, :create]
   resources :lessons, only: [:index, :show]
 

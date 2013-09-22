@@ -1,0 +1,30 @@
+!!!
+%html
+  %head
+    %title Textacademy
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    %header
+      %h1
+        %a#home{:href => "#{root_path}"}
+          %span.white> TEXT
+          %span.green> ACADEMY
+      
+      %p.right.white
+        - if @current_contributor.present?
+          %a.nav-link{:href => "#{lessons_path}"}
+            LESSONS
+          | 
+          %a.nav-link{:href => "#{sign_out_path}"} 
+            SIGN OUT
+        - else
+          %a#sign-up.nav-link{:href => "#"}
+            SIGN UP
+          |
+          %a#sign-in.nav-link{:href => "#"}
+            SIGN IN
+
+    .wrapper
+      = yield
